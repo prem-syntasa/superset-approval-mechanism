@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 
 export default function App() {
-  const [message, setMessage] = useState('');
+  let [message, setMessage ] = useState('');
+  const [customMessage, setCustomMessage] = useState('');
 
   const handleClick = (label) => {
-    setMessage(`You clicked: ${label}`);
+    if (label === "Submit") {
+      setCustomMessage(message);
+    }
+    else {
+      setCustomMessage(`You clicked: ${label}`);
+    }
+    fetch('http://localhost:3000/')
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch(error => console.error(error));
   };
 
   return (
@@ -51,9 +61,9 @@ export default function App() {
         <button onClick={() => handleClick('Reject')} style={btnStyle('#FFF7A6')}>Reject</button>
         <button onClick={() => handleClick('Approve Segment')} style={btnStyle('#FFF7A6')}>Approve this Audience Segment</button>
       </div>
-      {message && (
+      {customMessage && (
       <div style={{ marginTop: '20px', padding: '10px', background: '#dff', borderRadius: '5px' }}>
-        {message}
+        {customMessage}
       </div>
     )}
     </div>
