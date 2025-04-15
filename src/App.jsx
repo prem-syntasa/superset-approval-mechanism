@@ -25,16 +25,24 @@ export default function App() {
         <button onClick={() => handleClick('Submit')} style={btnStyle('#89A9F9')}>Submit</button>
       </div>
 
-      <div style={{
-        backgroundColor: '#E6FFF5',
-        padding: '50px',
-        textAlign: 'center',
-        fontSize: '20px',
-        fontWeight: 'bold',
-        marginBottom: '30px',
-        borderRadius: '10px'
-      }}>
-        Message
+      <div>
+        <textarea
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          style={{
+            width: '100%',
+            height: '100%',
+            resize: 'none',
+            fontSize: '16px',
+            padding: '10px',
+            borderRadius: '10px',
+            border: '1px solid #ccc',
+            boxSizing: 'border-box',
+            backgroundColor: '#f0fff0',
+          }}
+          rows={6}
+          placeholder="Message"
+        />
       </div>
 
       <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
