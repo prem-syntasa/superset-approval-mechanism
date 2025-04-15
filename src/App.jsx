@@ -1,8 +1,10 @@
 import React from 'react';
 
 export default function App() {
+  const [message, setMessage] = useState('');
+
   const handleClick = (label) => {
-    alert(`You clicked: ${label}`);
+    setMessage(`You clicked: ${label}`);
   };
 
   return (
@@ -41,6 +43,11 @@ export default function App() {
         <button onClick={() => handleClick('Reject')} style={btnStyle('#FFF7A6')}>Reject</button>
         <button onClick={() => handleClick('Approve Segment')} style={btnStyle('#FFF7A6')}>Approve this Audience Segment</button>
       </div>
+      {message && (
+      <div style={{ marginTop: '20px', padding: '10px', background: '#dff', borderRadius: '5px' }}>
+        {message}
+      </div>
+    )}
     </div>
   );
 }
