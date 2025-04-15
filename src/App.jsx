@@ -25,7 +25,7 @@ export default function App() {
       border: '2px solid #ccc',
       borderRadius: '10px',
       // width: '100%',
-      width: '1000px',
+      width: '900px',
       margin: '0 auto'
     }}>
       <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', justifyContent: 'space-between', backgroundColor: '#b0b0b0', padding: '10px', borderRadius: '8px' }}>
@@ -45,7 +45,7 @@ export default function App() {
           onChange={(e) => setMessage(e.target.value)}
           style={{
             width: '100%',
-            height: '400px',
+            height: '250px',
             resize: 'none',
             fontSize: '16px',
             padding: '10px',
