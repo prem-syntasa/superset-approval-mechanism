@@ -45,7 +45,7 @@ export default function App() {
           onChange={(e) => setMessage(e.target.value)}
           style={{
             width: '100%',
-            height: '250px',
+            height: '275px',
             resize: 'none',
             fontSize: '16px',
             padding: '10px',
