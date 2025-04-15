@@ -24,15 +24,19 @@ export default function App() {
       fontFamily: 'Arial, sans-serif',
       border: '2px solid #ccc',
       borderRadius: '10px',
-      width: '100%',
-      maxWidth: '800px',
+      // width: '100%',
+      width: '1000px',
       margin: '0 auto'
     }}>
-      <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', backgroundColor: '#b0b0b0', padding: '10px', borderRadius: '8px' }}>
+      <div style={{ display: 'flex', gap: '12px', marginBottom: '20px', justifyContent: 'space-between', backgroundColor: '#b0b0b0', padding: '10px', borderRadius: '8px' }}>
+        <div style={{ display: 'flex', gap: '60px' }}>
         <button onClick={() => handleClick('Audience Segment')} style={btnStyle('#A8F0C6')}>Audience Segment</button>
         <button onClick={() => handleClick('Profile Attributes')} style={btnStyle('#B8FFC0')}>Profile Attributes</button>
         <button onClick={() => handleClick('Donor ID')} style={btnStyle('#95FFBC')}>Donor ID</button>
+        </div>
+        <div>
         <button onClick={() => handleClick('Submit')} style={btnStyle('#89A9F9')}>Submit</button>
+        </div>
       </div>
 
       <div>
@@ -41,7 +45,7 @@ export default function App() {
           onChange={(e) => setMessage(e.target.value)}
           style={{
             width: '100%',
-            height: '100%',
+            height: '400px',
             resize: 'none',
             fontSize: '16px',
             padding: '10px',
@@ -73,9 +77,9 @@ export default function App() {
 function btnStyle(color) {
   return {
     backgroundColor: color,
-    padding: '10px 20px',
+    padding: '10px 40px',
     border: 'none',
-    borderRadius: '8px',
+    borderRadius: '20px',
     fontSize: '14px',
     cursor: 'pointer',
     fontWeight: 'bold'
