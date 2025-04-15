@@ -1,9 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 export default function App() {
   let [message, setMessage ] = useState('');
   const [customMessage, setCustomMessage] = useState('');
-
+  useEffect(() => {
+    // Function to be called automatically
+    setCustomMessage('Click any button');
+    // Optional: Return a cleanup function if needed
+    return () => {
+      // This function runs when the component unmounts or before the next effect
+      console.log('Component is unmounting or re-rendering');
+    };
+  }, []);
   const handleClick = (label) => {
     if (label === "Submit") {
       setCustomMessage(message);
@@ -65,7 +73,7 @@ export default function App() {
         <button onClick={() => handleClick('Reject')} style={btnStyle('#FFF7A6')}>Reject</button>
         <button onClick={() => handleClick('Approve Segment')} style={btnStyle('#FFF7A6')}>Approve this Audience Segment</button>
       </div>
-      {customMessage && (
+      {(
       <div style={{ marginTop: '20px', padding: '10px', background: '#dff', borderRadius: '5px' }}>
         {customMessage}
       </div>
